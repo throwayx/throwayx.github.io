@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body>
+
+<div id="body" class="w3-content w3-display-container">
+  <img id="main" src="./IMG_7996.jpg" style="width:100%" onerror="handler()">
+
+  <button class="w3-button w3-black w3-display-left" onclick="showDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="showDivs(1)">&#10095;</button>
+</div>
+
+<script>
+
+var idx = 7996;
+var dir = 0;
+showDivs(dir);
+
+function showDivs(n) {
+    dir = n;
+    idx += n;
+    if(idx > 8758) idx = 7996;
+    if(idx < 7996) idx = 8758;
+    let src = "./IMG_" + idx + ".JPG";
+    let img = document.getElementById('main');
+    img.src = src;
+}
+
+function handler()
+{
+    showDivs(dir)
+}
+
+</script>
+
+</body>
+</html>
